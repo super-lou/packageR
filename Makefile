@@ -1,12 +1,12 @@
-# build package documentation
+all: doc
+.PHONY: doc install check
+
 doc:
 	R -e 'devtools::document()'
+
+install:
+	R -e "remotes::install_github('super-lou/packageR')"
 
 check:
 	R -e 'devtools::check()'
 
-install:
-	R -e 'remotes::install_github("super-lou/packageR")'
-
-documentation:
-	python3 generate_documentation.py

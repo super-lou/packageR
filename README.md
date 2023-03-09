@@ -1,12 +1,12 @@
-# NCf [<img src="man/figures/MKstat.png" align="right" width=160 height=160 alt=""/>](https://makaho.sk8.inrae.fr/)
+# packageR [<img src="AE.png" align="right" width=160 height=160 alt=""/>](https://www.inrae.fr/en)
 
 <!-- badges: start -->
-[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-green)](https://lifecycle.r-lib.org/articles/stages.html)
-![](https://img.shields.io/github/last-commit/super-lou/NCf)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md) 
+[![Lifecycle:Stable](https://img.shields.io/badge/Lifecycle-Stable-97ca00)](<Redirect-URL>)
+![](https://img.shields.io/github/last-commit/super-lou/packageR)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 <!-- badges: end -->
 
-**NCf** is a R package which provide an efficient and simple way to create a NetCDF file only with R variable declarations.
+A simple R package that help to create simple R package.
 
 This project was carried out for National Research Institute for Agriculture, Food and the Environment (Institut National de Recherche pour l’Agriculture, l’Alimentation et l’Environnement, [INRAE](https://agriculture.gouv.fr/inrae-linstitut-national-de-recherche-pour-lagriculture-lalimentation-et-lenvironnement) in french).
 
@@ -14,12 +14,12 @@ This project was carried out for National Research Institute for Agriculture, Fo
 ## Installation
 For latest development version
 ``` r
-remotes::install_github('super-lou/NCf')
+remotes::install_github('super-lou/packageR')
 ```
 
 
 ## Documentation
-
+Go into a directory where there are some R files and within a R console you can type `?packageR::packing` to see possible arguments and then type `packageR::packing(*arguments*)` to create your R package.
 
 
 
@@ -37,3 +37,4 @@ remotes::install_github('super-lou/NCf')
 
 ## Code of Conduct
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+

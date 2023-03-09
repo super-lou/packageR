@@ -1,4 +1,32 @@
-# Contributor Code of Conduct
+# Copyright 2023 Louis Héraut(louis.heraut@inrae.fr)*1
+#                     
+# *1   INRAE, France
+#
+# This file is part of packageR R package.
+#
+# packageR R package is free software: you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+#
+# packageR R package is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with packageR R package.
+# If not, see <https://www.gnu.org/licenses/>.
+
+
+#' @title CODE_OF_CONDUCT.md
+#' @description ...
+#' @return ...
+#' @examples
+#' ...
+#' @export
+CODE_OF_CONDUCT.md = function () {
+    "# Contributor Code of Conduct
 
 As contributors and maintainers of this project, we pledge to respect all people who 
 contribute through reporting issues, posting feature requests, updating documentation,
@@ -23,4 +51,5 @@ opening an issue or contacting one or more of the project maintainers.
 This Code of Conduct is adapted from the Contributor Covenant 
 (https://www.contributor-covenant.org), version 1.0.0, available at 
 https://contributor-covenant.org/version/1/0/0/.
-
+"
+}
