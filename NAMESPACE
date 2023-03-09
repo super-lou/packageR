@@ -2,9 +2,9 @@
 
 export("\")")
 export(packing)
-export(packing_CODE_OF_CONDUCT.md)
+export(packing_CODE_OF_CONDUCT)
 export(packing_DESCRIPTION)
 export(packing_LICENSE)
 export(packing_Makefile)
-export(packing_README.md)
+export(packing_README)
 export(source_dev)
