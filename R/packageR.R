@@ -213,7 +213,7 @@ packing = function (Rfile_pattern=".*[.]R$",
 
         Lines = c(paste0("# Copyright ",
                          format(date, "%Y"), " ",
-                         author, "(", email, ")*1
+                         author, " (", email, ")*1
 #                     
 # *1   INRAE, France
 #
