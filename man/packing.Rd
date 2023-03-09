@@ -9,8 +9,8 @@ packing(
   name = "packageR",
   date = Sys.Date(),
   description = "A simple R package that help to create simple R package.",
- 
-    documentation = "Go into a directory where there are some R files and within a R console you can type `?packageR::packing` to see possible arguments and then type `packageR::packing(*arguments*)` to create your R package.",
+  documentation =
+    "Go into a directory where there are some R files and within a R console you can type `?packageR::packing` to see possible arguments and then type `packageR::packing(*arguments*)` to create your R package.",
   author = "Louis Héraut",
   email = "louis.heraut@inrae.fr",
   imports = c("roxygen2", "remotes", "devtools"),
