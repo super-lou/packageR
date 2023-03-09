@@ -19,7 +19,7 @@
 # If not, see <https://www.gnu.org/licenses/>.
 
 
-#' @title LICENSE
+#' @title packing_LICENSE
 #' @description ...
 #' @param name ...
 #' @param date ...
@@ -28,7 +28,7 @@
 #' @examples
 #' ...
 #' @export
-LICENSE = function (name, date, author) {
+packing_LICENSE = function (name, date, author) {
     paste0("
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007

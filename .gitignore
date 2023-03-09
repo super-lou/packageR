@@ -1,0 +1,6 @@
+*~ 
+*#
+.Rhistory
+*.emacs*
+.directory
+*.nc

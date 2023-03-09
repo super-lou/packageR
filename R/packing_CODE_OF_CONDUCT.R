@@ -19,13 +19,13 @@
 # If not, see <https://www.gnu.org/licenses/>.
 
 
-#' @title CODE_OF_CONDUCT.md
+#' @title packing_CODE_OF_CONDUCT.md
 #' @description ...
 #' @return ...
 #' @examples
 #' ...
 #' @export
-CODE_OF_CONDUCT.md = function () {
+packing_CODE_OF_CONDUCT.md = function () {
     "# Contributor Code of Conduct
 
 As contributors and maintainers of this project, we pledge to respect all people who 

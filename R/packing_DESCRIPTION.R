@@ -19,19 +19,19 @@
 # If not, see <https://www.gnu.org/licenses/>.
 
 
-#' @title DESCRIPTION
+#' @title packing_DESCRIPTION
 #' @description ...
 #' @param name ...
 #' @param date ...
 #' @param description ...
 #' @param author ...
 #' @param email ...
-#' @param imports ... (default : c("a", "bb"))
+#' @param imports ...
 #' @return ...
 #' @examples
 #' ...
 #' @export
-DESCRIPTION = function (name, date, description, author, email, imports=c("a", "bb")) {
+packing_DESCRIPTION = function (name, date, description, author, email, imports) {
     paste0("Package: ", name,"
 Version: 0.0.1
 Date: ", date, "
@@ -40,7 +40,7 @@ Description: ", description, "
 Authors@R: c(
     person(given = \"", gsub(" .*$", "", author) , "\",
            family = \"", gsub("^.* ", "", author) , "\",
-           role = c(\"aut\"),
+           role = c(\"cre\", \"aut\"),
            email = \"", email, "\")
     )
 Encoding: UTF-8

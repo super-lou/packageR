@@ -45,7 +45,7 @@
 #' @param documentation ... (default : "Go into a directory where there are some R files and within a R console you can type `?packageR::packing` to see possible arguments and then type `packageR::packing(*arguments*)` to create your R package.")
 #' @param author ... (default : "Louis Héraut")
 #' @param email ... (default : "louis.heraut@inrae.fr")
-#' @param imports ... (default : c("roxygen2", "remotes", "devtools"))
+#' @param imports ... (default : c("roxygen2", "remotes", "devtools", "stringr"))
 #' @param git_install ... (default : "remotes::install_github('super-lou/packageR')")
 #' @param figure_path ... (default : "AE.png")
 #' @param lifecycle ... (default : "Stable")
@@ -61,7 +61,7 @@ packing = function (Rfile_pattern=".*[.]R$",
                     documentation="Go into a directory where there are some R files and within a R console you can type `?packageR::packing` to see possible arguments and then type `packageR::packing(*arguments*)` to create your R package.",
                     author="Louis Héraut",
                     email="louis.heraut@inrae.fr",
-                    imports=c("roxygen2", "remotes", "devtools"),
+                    imports=c("roxygen2", "remotes", "devtools", "stringr"),
                     git_install="remotes::install_github('super-lou/packageR')",
                     figure_path="AE.png",
                     lifecycle="Stable",
@@ -258,7 +258,7 @@ packing = function (Rfile_pattern=".*[.]R$",
             args = ""
         }
 
-        write(eval(parse(text=paste0(file, "(", args, ")"))),
+        write(eval(parse(text=paste0("packing_", file, "(", args, ")"))),
               file_path, append=TRUE)
     }
 

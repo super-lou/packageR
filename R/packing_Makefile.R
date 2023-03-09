@@ -19,14 +19,14 @@
 # If not, see <https://www.gnu.org/licenses/>.
 
 
-#' @title Makefile
+#' @title packing_Makefile
 #' @description ...
 #' @param git_install ...
 #' @return ...
 #' @examples
 #' ...
 #' @export
-Makefile = function (git_install) {
+packing_Makefile = function (git_install) {
     paste0("all: doc
 .PHONY: doc install check
 
