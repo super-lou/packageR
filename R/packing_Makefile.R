@@ -1,4 +1,4 @@
-# Copyright 2023 Louis Héraut(louis.heraut@inrae.fr)*1
+# Copyright 2023 Louis Héraut (louis.heraut@inrae.fr)*1
 #                     
 # *1   INRAE, France
 #
