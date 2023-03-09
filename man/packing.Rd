@@ -17,7 +17,7 @@ packing(
   git_install = "remotes::install_github('super-lou/packageR')",
   figure_path = "AE.png",
   lifecycle = "Stable",
-  add_file = c("CODE_OF_CONDUCT", "DESCRIPTION", "LICENSE", "Makefile", "README")
+  add_file = c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md")
 )
 }
 \arguments{
@@ -43,7 +43,7 @@ packing(
 
 \item{lifecycle}{... (default : "Stable")}
 
-\item{add_file}{... (default : c("CODE_OF_CONDUCT", "DESCRIPTION", "LICENSE", "Makefile", "README"))}
+\item{add_file}{... (default : c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))}
 }
 \value{
 ...

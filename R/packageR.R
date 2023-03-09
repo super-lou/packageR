@@ -49,7 +49,7 @@
 #' @param git_install ... (default : "remotes::install_github('super-lou/packageR')")
 #' @param figure_path ... (default : "AE.png")
 #' @param lifecycle ... (default : "Stable")
-#' @param add_file ... (default : c("CODE_OF_CONDUCT", "DESCRIPTION", "LICENSE", "Makefile", "README"))
+#' @param add_file ... (default : c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))
 #' @return ...
 #' @examples
 #' ...
@@ -65,8 +65,8 @@ packing = function (Rfile_pattern=".*[.]R$",
                     git_install="remotes::install_github('super-lou/packageR')",
                     figure_path="AE.png",
                     lifecycle="Stable",
-                    add_file=c("CODE_OF_CONDUCT", "DESCRIPTION",
-                               "LICENSE", "Makefile", "README")) {
+                    add_file=c("CODE_OF_CONDUCT.md", "DESCRIPTION",
+                               "LICENSE", "Makefile", "README.md")) {
     
     if (!(dir.exists(name))) {
         dir.create(name)
@@ -74,7 +74,7 @@ packing = function (Rfile_pattern=".*[.]R$",
         stop (paste0(name, " directory already exists, choose an other name for the package"))
     }
 
-    isCovenant = "CODE_OF_CONDUCT" %in% add_file
+    isCovenant = "CODE_OF_CONDUCT.md" %in% add_file
 
     Rpath = file.path(name, "R")
     dir.create(Rpath)
@@ -252,7 +252,7 @@ packing = function (Rfile_pattern=".*[.]R$",
         } else if (file == "Makefile") {
             args = "git_install"
 
-        } else if (file == "README") {
+        } else if (file == "README.md") {
             args = "name, figure_path, lifecycle, git_install, isCovenant, description, documentation"
         } else {
             args = ""
@@ -264,6 +264,11 @@ packing = function (Rfile_pattern=".*[.]R$",
 
     devtools::document(name)
     file.copy(from=figure_path, to=name)
+
+    Lines = readLines(file.path(name, "NAMESPACE"))
+    Lines = Lines[!grepl("export[(].*[)].*[)]", Lines)]
+    Lines = paste0(Lines, collapse="\n")   
+    cat(Lines, file=file.path(name, "NAMESPACE"))
 }
 
 

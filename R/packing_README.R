@@ -19,7 +19,7 @@
 # If not, see <https://www.gnu.org/licenses/>.
 
 
-#' @title packing_README
+#' @title packing_README.md
 #' @description ...
 #' @param name ...
 #' @param figure_path ...
@@ -32,7 +32,7 @@
 #' @examples
 #' ...
 #' @export
-packing_README = function (name, figure_path, lifecycle, git_install, isCovenant, description, documentation) {
+packing_README.md = function (name, figure_path, lifecycle, git_install, isCovenant, description, documentation) {
 
     if (lifecycle == "Experimental") {
         lifecycle_badge = "[![Lifecycle:Experimental](https://img.shields.io/badge/Lifecycle-Experimental-339999)](<Redirect-URL>)"
