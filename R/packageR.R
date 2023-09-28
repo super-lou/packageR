@@ -62,7 +62,7 @@ packing = function (Rfile_pattern=".*[.]R$",
                     documentation="Go into a directory where there are some R files and within a R console you can type `?packageR::packing` to see possible arguments and then type `packageR::packing(*arguments*)` to create your R package.",
                     author="Louis Héraut",
                     email="louis.heraut@inrae.fr",
-                    imports=c("roxygen2", "remotes", "devtools", "stringr"),
+                    imports=c("roxygen2", "remotes", "devtools", "stringr", "this.path"),
                     git_install="remotes::install_github('super-lou/packageR')",
                     figure_path=NULL,
                     lifecycle="Stable",
@@ -76,12 +76,12 @@ packing = function (Rfile_pattern=".*[.]R$",
     }
 
     if (is.null(figure_path)) {
-        figure_path = list.files("../AE", pattern="AE_hex*")
+        path = dirname(dirname(this.path()))
+        figure_path = list.files(path, "AE", pattern="AE_hex*",
+                                 full.names=TRUE)
 
         print(figure_path)
-        figure_path = file.path("../AE",
-                                figure_path[sample(1:length(figure_path),
-                                                   1)])
+        figure_path = figure_path[sample(1:length(figure_path), 1)]
     }
 
     print(figure_path)
