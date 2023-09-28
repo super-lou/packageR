@@ -76,19 +76,20 @@ packing = function (Rfile_pattern=".*[.]R$",
     }
 
     if (is.null(figure_path)) {
-        path = dirname(dirname(sys.frame(1)$ofile))
-
-        print(path)
-        
-        figure_path = list.files(path, "AE", pattern="AE_hex*",
-                                 full.names=TRUE)
-
-        print(figure_path)
-        figure_path = figure_path[sample(1:length(figure_path), 1)]
+        figures = c("https://github.com/super-lou/packageR/raw/main/AE/AE_hex_%2066c1bf.png",
+                    "https://github.com/super-lou/packageR/raw/main/AE/AE_hex_000000.png",
+                    "https://github.com/super-lou/packageR/raw/main/AE/AE_hex_008c8e.png",
+                    "https://github.com/super-lou/packageR/raw/main/AE/AE_hex_275662.png",
+                    "https://github.com/super-lou/packageR/raw/main/AE/AE_hex_423089.png",
+                    "https://github.com/super-lou/packageR/raw/main/AE/AE_hex_797870.png",
+                    "https://github.com/super-lou/packageR/raw/main/AE/AE_hex_9dc544.png",
+                    "https://github.com/super-lou/packageR/raw/main/AE/AE_hex_9ed6e3.png",
+                    "https://github.com/super-lou/packageR/raw/main/AE/AE_hex_c4c0b3.png",
+                    "https://github.com/super-lou/packageR/raw/main/AE/AE_hex_ed6e6c.png",
+                    "https://github.com/super-lou/packageR/raw/main/AE/AE_hex_ffffff.png")
+        figure_path = figures[sample(1:length(figures), 1)]
     }
 
-    print(figure_path)
-    
     isCovenant = "CODE_OF_CONDUCT.md" %in% add_file
 
     Rpath = file.path(name, "R")
@@ -278,7 +279,8 @@ packing = function (Rfile_pattern=".*[.]R$",
     }
     
     devtools::document(name)
-    file.copy(from=figure_path, to=name)
+    # file.copy(from=figure_path, to=name)
+    download.file(figure_path, file.path(name, basename(figure_path)))
 
     Lines = readLines(file.path(name, "NAMESPACE"))
     Lines = Lines[!grepl("export[(].*[)].*[)]", Lines)]
