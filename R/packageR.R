@@ -76,7 +76,7 @@ packing = function (Rfile_pattern=".*[.]R$",
     }
 
     if (is.null(figure_path)) {
-        path = dirname(dirname(this.path()))
+        path = dirname(dirname(this.path::this.path()))
         figure_path = list.files(path, "AE", pattern="AE_hex*",
                                  full.names=TRUE)
 
