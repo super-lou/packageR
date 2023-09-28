@@ -55,7 +55,8 @@
 #' @examples
 #' ...
 #' @export
-packing = function (Rfile_pattern=".*[.]R$",
+packing = function (package_path=".",
+                    Rfile_pattern=".*[.]R$",
                     name="packageR",
                     date=Sys.Date(),
                     description="A simple R package that help to create simple R package.",
@@ -94,8 +95,11 @@ packing = function (Rfile_pattern=".*[.]R$",
 
     Rpath = file.path(name, "R")
     dir.create(Rpath)
-    Rfiles = list.files(pattern=Rfile_pattern, recursive=TRUE,
+    Rfiles = list.files(path=package_path,
+                        pattern=Rfile_pattern, recursive=TRUE,
                         full.names=TRUE)
+
+    print(Rfiles)
 
     for (file in Rfiles) {
 
@@ -279,7 +283,6 @@ packing = function (Rfile_pattern=".*[.]R$",
     }
     
     devtools::document(name)
-    # file.copy(from=figure_path, to=name)
     download.file(figure_path, file.path(name, basename(figure_path)))
 
     Lines = readLines(file.path(name, "NAMESPACE"))
