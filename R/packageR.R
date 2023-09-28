@@ -111,7 +111,7 @@ packing = function (package_path=".",
             which(
                 sapply(Lines, grepl,
                        pattern=
-                           "[=][[:space:]]*function[[:space:]]*[(]"))
+                           "([=][[:space:]]*function[[:space:]]*[(])|([<][-][[:space:]]*function[[:space:]]*[(])"))
 
         Doc = c()        
         for (i in 1:length(Id_function)) {
@@ -140,11 +140,11 @@ packing = function (package_path=".",
                                              collapse=" "))
 
                 function_name =
-                    gsub("[[:space:]]*[=][[:space:]]*function[[:space:]]*[(].*",
+                    gsub("([[:space:]]*[=][[:space:]]*function[[:space:]]*[(].*)|([[:space:]]*[<][-][[:space:]]*function[[:space:]]*[(].*)",
                          "", function_lines)
 
                 function_args =
-                    gsub("(.*[[:space:]]*[=][[:space:]]*function[[:space:]]*[(])|([)][[:space:]]*[{])",
+                    gsub("(.*[[:space:]]*[=][[:space:]]*function[[:space:]]*[(])|(.*[[:space:]]*[<][-][[:space:]]*function[[:space:]]*[(])|([)][[:space:]]*[{])",
                          "", function_lines)
 
                 if (nchar(function_args) == 0) {
