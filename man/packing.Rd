@@ -15,7 +15,7 @@ packing(
   email = "louis.heraut@inrae.fr",
   imports = c("roxygen2", "remotes", "devtools", "stringr"),
   git_install = "remotes::install_github('super-lou/packageR')",
-  figure_path = "AE.png",
+  figure_path = NULL,
   lifecycle = "Stable",
   add_file = c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md")
 )
@@ -39,11 +39,13 @@ packing(
 
 \item{git_install}{... (default : "remotes::install_github('super-lou/packageR')")}
 
-\item{figure_path}{... (default : "AE.png")}
+\item{figure_path}{...}
 
 \item{lifecycle}{... (default : "Stable")}
 
 \item{add_file}{... (default : c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))}
+
+\item{NULL}{...}
 }
 \value{
 ...

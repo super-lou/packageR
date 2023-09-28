@@ -47,7 +47,8 @@
 #' @param email ... (default : "louis.heraut@inrae.fr")
 #' @param imports ... (default : c("roxygen2", "remotes", "devtools", "stringr"))
 #' @param git_install ... (default : "remotes::install_github('super-lou/packageR')")
-#' @param figure_path ... (default : "AE.png")
+#' @param figure_path ...
+#' @param NULL ...
 #' @param lifecycle ... (default : "Stable")
 #' @param add_file ... (default : c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))
 #' @return ...
@@ -63,7 +64,7 @@ packing = function (Rfile_pattern=".*[.]R$",
                     email="louis.heraut@inrae.fr",
                     imports=c("roxygen2", "remotes", "devtools", "stringr"),
                     git_install="remotes::install_github('super-lou/packageR')",
-                    figure_path="AE.png",
+                    figure_path=NULL,
                     lifecycle="Stable",
                     add_file=c("CODE_OF_CONDUCT.md", "DESCRIPTION",
                                "LICENSE", "Makefile", "README.md")) {
@@ -72,6 +73,13 @@ packing = function (Rfile_pattern=".*[.]R$",
         dir.create(name)
     } else {
         stop (paste0(name, " directory already exists, choose an other name for the package"))
+    }
+
+    if (is.null(figure_path)) {
+        figure_path = list.files("AE", pattern="AE_hex*")
+        figure_path = file.path("AE",
+                                figure_path[sample(1:length(figure_path),
+                                                   1)])
     }
 
     isCovenant = "CODE_OF_CONDUCT.md" %in% add_file
@@ -261,7 +269,7 @@ packing = function (Rfile_pattern=".*[.]R$",
         write(eval(parse(text=paste0("packing_", file, "(", args, ")"))),
               file_path, append=TRUE)
     }
-
+    
     devtools::document(name)
     file.copy(from=figure_path, to=name)
 
