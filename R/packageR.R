@@ -99,6 +99,8 @@ packing = function (package_path=".",
                         pattern=Rfile_pattern, recursive=TRUE,
                         full.names=TRUE)
 
+    print(package_path)
+    print(Rfile_pattern)
     print(Rfiles)
 
     for (file in Rfiles) {
