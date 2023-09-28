@@ -77,10 +77,15 @@ packing = function (Rfile_pattern=".*[.]R$",
 
     if (is.null(figure_path)) {
         figure_path = list.files("AE", pattern="AE_hex*")
+
+        print(figure_path)
+        
         figure_path = file.path("AE",
                                 figure_path[sample(1:length(figure_path),
                                                    1)])
     }
+
+    print(figure_path)
 
     isCovenant = "CODE_OF_CONDUCT.md" %in% add_file
 
