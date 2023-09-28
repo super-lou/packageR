@@ -15,5 +15,6 @@ Imports:
     roxygen2,
     remotes,
     devtools,
-    stringr
+    stringr,
+    this.path
 RoxygenNote: 7.2.3
