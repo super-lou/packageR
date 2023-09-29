@@ -5,6 +5,7 @@
 \title{packing}
 \usage{
 packing(
+  package_path = ".",
   Rfile_pattern = ".*[.]R$",
   name = "packageR",
   date = Sys.Date(),
@@ -21,48 +22,70 @@ packing(
 )
 }
 \arguments{
-\item{Rfile_pattern}{... (default : ".*[.]R$")}
+\item{package_path}{Path of the directory that will be transform into a R package (default : ".")}
 
-\item{name}{... (default : "packageR")}
+\item{Rfile_pattern}{Regexp pattern that allow to select only a selection of files in the package_path directory (default : ".*[.]R$")}
 
-\item{date}{... (default : Sys.Date())}
+\item{name}{Name of the package (default : "packageR")}
 
-\item{description}{... (default : "A simple R package that help to create simple R package.")}
+\item{date}{Creation date of the package or the version (default : Sys.Date())}
 
-\item{documentation}{... (default : "Go into a directory where there are some R files and within a R console you can type `?packageR::packing` to see possible arguments and then type `packageR::packing(*arguments*)` to create your R package.")}
+\item{description}{Description of the package (default : "A simple R package that help to create simple R package.")}
 
-\item{author}{... (default : "Louis Héraut")}
+\item{documentation}{Simple documentation for the README file in order to explain how the package work (default : "Go into a directory where there are some R files and within a R console you can type `?packageR::packing` to see possible arguments and then type `packageR::packing(*arguments*)` to create your R package.")}
 
-\item{email}{... (default : "louis.heraut@inrae.fr")}
+\item{author}{Author of the package (default : "Louis Héraut")}
 
-\item{imports}{... (default : c("roxygen2", "remotes", "devtools", "stringr"))}
+\item{email}{Email of the author (default : "louis.heraut@inrae.fr")}
 
-\item{git_install}{... (default : "remotes::install_github('super-lou/packageR')")}
+\item{imports}{Needed package for the instalation of the package that will be created (default : c("roxygen2", "remotes", "devtools", "stringr"))}
 
-\item{figure_path}{...}
+\item{git_install}{General R command to install this packages with a repository on which it will be deposed (default : "remotes::install_github('super-lou/packageR')")}
 
-\item{lifecycle}{... (default : "Stable")}
+\item{figure_path}{Path of the figure to use for the README}
 
-\item{add_file}{... (default : c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))}
+\item{lifecycle}{Lifecycle of the project (default : "Stable")
+Experimental -> The project is in the very early stages of development. The codebase will be changing frequently.
+    Maturing -> The codebase is being roughed out, but finer details are likely to change.
+      Stable -> The project is in a reliable state and major changes are unlikely to happen.
+     Dormant -> The project is currently not under active development, but there are plans to redevelop.
+     Retired -> The project is no longer being used and/or supported.}
 
-\item{NULL}{...}
+\item{add_file}{Which files generaly used in a package will be add to this package (default : c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))}
 }
 \value{
-...
+A new directory in the working directory that is a formated usable package based on the input files that were given
 
 ...
 
 ...
 }
 \description{
-...
+Creates a R package with a selection of R files that contain functions
 
 ...
 
 ...
 }
 \examples{
-...
+# for default option (which is the option used for create this R package)
+packageR::packing()
+
+# for your personal package
+packageR::packing(package_path="/home/alice/CheshiRCat/",
+                  Rfile_pattern=".*[.]R$",
+                  name="CheshiRCat",
+                  date="1865-11-01",
+                  description="Twas brillig, and the slithy toves. Did gyre and gimble in the wabe; All mimsy were the borogoves, And the mome raths outgrabe.",
+                  documentation="Beware the [*Jabberwock*](https://en.wikipedia.org/wiki/Jabberwocky), my son! The jaws that bite, the claws that catch!</br> Beware the *Jubjub bird*, and shun The frumious *Bandersnatch*!</br> He took his **vorpal sword** in hand:</br></br> - Long time the manxome foe he sought </br> - So rested he by the Tumtum tree, And stood awhile in thought.</br></br> And as in uffish thought he stood `?CheshiRCat::smile`",
+                  author="Alice",
+                  email="alice@wonderland.uk",
+                  imports=c("rabbit", "caterpillar"),
+                  git_install="remotes::install_github('alice_adventures/CheshiRCat')",
+                  figure_path=NULL,
+                  lifecycle="Dormant",
+                  add_file=c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))
+
 ...
 ...
 }
