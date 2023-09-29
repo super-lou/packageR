@@ -118,7 +118,6 @@ packing = function (package_path=".",
                        pattern=
                            "([=][[:space:]]*function[[:space:]]*[(])|([<][-][[:space:]]*function[[:space:]]*[(])"))
 
-
         print(Id_function)
 
         Doc = c()        
