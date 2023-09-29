@@ -24,7 +24,7 @@ packing(
 \arguments{
 \item{package_path}{Path to the directory to be transformed into an R package (default: ".")}
 
-\item{Rfile_pattern}{Regular expression pattern to select specific files in the package_path directory (default: ".*[.]R$")}
+\item{Rfile_pattern}{Regular expression pattern to select specific files in the package_path directory (default: ".*\link{.}R$")}
 
 \item{name}{Name of the package (default: "packageR")}
 
@@ -32,7 +32,7 @@ packing(
 
 \item{description}{Package description (default: "A simple R package that helps create simple R packages.")}
 
-\item{documentation}{Simple README documentation explaining how the package works (default: "Navigate to a directory with R files, open an R console, and run `?packageR::packing` to see available arguments. Then, run `packageR::packing(*arguments*)` to create your R package.")}
+\item{documentation}{Simple README documentation explaining how the package works (default: "Navigate to a directory with R files, open an R console, and run \code{?packageR::packing} to see available arguments. Then, run \verb{packageR::packing(*arguments*)} to create your R package.")}
 
 \item{author}{Package author (default: "Louis Héraut")}
 
@@ -45,29 +45,22 @@ packing(
 \item{figure_path}{Path to a figure to use in the README}
 
 \item{lifecycle}{Project lifecycle status (default: "Stable")
-
 Lifecycle statuses:
-- Experimental: The project is in its early stages of development, and the codebase may change frequently.
-- Maturing: The codebase is being refined, but finer details are likely to change.
-- Stable: The project is in a reliable state, and major changes are unlikely to occur.
-- Dormant: The project is not currently under active development, but there are plans for future redevelopment.
-- Retired: The project is no longer in use and/or supported.}
+\itemize{
+\item Experimental: The project is in its early stages of development, and the codebase may change frequently.
+\item Maturing: The codebase is being refined, but finer details are likely to change.
+\item Stable: The project is in a reliable state, and major changes are unlikely to occur.
+\item Dormant: The project is not currently under active development, but there are plans for future redevelopment.
+\item Retired: The project is no longer in use and/or supported.
+}}
 
 \item{add_file}{List of additional files commonly included in packages (default: c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))}
 }
 \value{
 A new directory in the working directory formatted as a usable R package, based on the provided input files.
-
-...
-
-...
 }
 \description{
 This function creates an R package from a selection of R files containing functions.
-
-...
-
-...
 }
 \examples{
 # for default option (which is the option used for create this R package)
@@ -87,7 +80,4 @@ packageR::packing(package_path="/home/alice/CheshiRCat/",
                   figure_path=NULL,
                   lifecycle="Dormant",
                   add_file=c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))
-
-...
-...
 }

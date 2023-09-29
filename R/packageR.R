@@ -20,7 +20,6 @@
 
 
 #' @title packing
-#' 
 #' @description This function creates an R package from a selection of R files containing functions.
 #' @param package_path Path to the directory to be transformed into an R package (default: ".")
 #' @param Rfile_pattern Regular expression pattern to select specific files in the package_path directory (default: ".*[.]R$")
@@ -34,14 +33,12 @@
 #' @param git_install R command to install packages from a specified repository (default: "remotes::install_github('super-lou/packageR')")
 #' @param figure_path Path to a figure to use in the README
 #' @param lifecycle Project lifecycle status (default: "Stable")
-#'
 #' Lifecycle statuses:
 #' - Experimental: The project is in its early stages of development, and the codebase may change frequently.
 #' - Maturing: The codebase is being refined, but finer details are likely to change.
 #' - Stable: The project is in a reliable state, and major changes are unlikely to occur.
 #' - Dormant: The project is not currently under active development, but there are plans for future redevelopment.
 #' - Retired: The project is no longer in use and/or supported.
-#' 
 #' @param add_file List of additional files commonly included in packages (default: c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))
 #' @return A new directory in the working directory formatted as a usable R package, based on the provided input files.
 #' 
@@ -63,8 +60,8 @@
 #'                   figure_path=NULL,
 #'                   lifecycle="Dormant",
 #'                   add_file=c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))
-#' 
 #' @export
+#' @md
 packing = function (package_path=".",
                     Rfile_pattern=".*[.]R$",
                     name="packageR",
@@ -162,7 +159,8 @@ packing = function (package_path=".",
 #' @return ...
 #' @examples
 #' ...
-#' @export")
+#' @export
+#' @md")
                     
                 } else {
                     if (grepl("[=]", function_args)) {
@@ -228,7 +226,8 @@ packing = function (package_path=".",
 #' @return ...
 #' @examples
 #' ...
-#' @export")
+#' @export
+#' @md")
                 }
                 Doc = c(Doc, doc)
             }
@@ -303,7 +302,6 @@ packing = function (package_path=".",
 
 
 #' @title source_dev
-#' 
 #' @description Source an R package from the local development directory or load it from installed packages.
 #' @param name Name of the package to source (default: "packageR")
 #' @param dev_path Path to the local development directory (default: ".")
@@ -318,6 +316,7 @@ packing = function (package_path=".",
 #' source_dev(name="CheshiRCat", dev_path="/home/rabbit/carrot")
 #'
 #' @export
+#' @md
 source_dev = function (name="packageR", dev_path=".") {
     if (any(file.exists(dev_path))) {
         print(paste0("Loading ", name, " from local directory"))
