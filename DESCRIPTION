@@ -2,7 +2,7 @@ Package: packageR
 Version: 0.0.1
 Date: 2023-09-28
 Title: packageR
-Description: A simple R package that help to create simple R package.
+Description: A simple R package that helps create simple R packages.
 Authors@R: c(
     person(given = "Louis",
            family = "Héraut",

@@ -7,16 +7,22 @@
 source_dev(name = "packageR", dev_path = ".")
 }
 \arguments{
-\item{name}{... (default : "packageR")}
+\item{name}{Name of the package to source (default: "packageR")}
 
-\item{dev_path}{... (default : ".")}
+\item{dev_path}{Path to the local development directory (default: ".")}
 }
 \value{
-...
+Loaded scripts
 }
 \description{
-...
+Source an R package from the local development directory or load it from installed packages.
 }
 \examples{
-...
+# Assuming you have a package named "CheshiRCat" in the local development directory "/home/alice/CheshiRCat/",
+# you can source it using the following command:
+source_dev(name="CheshiRCat", dev_path="/home/alice/CheshiRCat/")
+
+# If the dev_path points to a non-existing directory, this will source the installed package named "CheshiRCat":
+source_dev(name="CheshiRCat", dev_path="/home/rabbit/carrot")
+
 }

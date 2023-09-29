@@ -9,9 +9,9 @@ packing(
   Rfile_pattern = ".*[.]R$",
   name = "packageR",
   date = Sys.Date(),
-  description = "A simple R package that help to create simple R package.",
+  description = "A simple R package that helps create simple R packages.",
   documentation =
-    "Go into a directory where there are some R files and within a R console you can type `?packageR::packing` to see possible arguments and then type `packageR::packing(*arguments*)` to create your R package.",
+    "Navigate to a directory with R files, open an R console, and run `?packageR::packing` to see available arguments. Then, run `packageR::packing(*arguments*)` to create your R package.",
   author = "Louis Héraut",
   email = "louis.heraut@inrae.fr",
   imports = c("roxygen2", "remotes", "devtools", "stringr"),
@@ -22,46 +22,48 @@ packing(
 )
 }
 \arguments{
-\item{package_path}{Path of the directory that will be transform into a R package (default : ".")}
+\item{package_path}{Path to the directory to be transformed into an R package (default: ".")}
 
-\item{Rfile_pattern}{Regexp pattern that allow to select only a selection of files in the package_path directory (default : ".*[.]R$")}
+\item{Rfile_pattern}{Regular expression pattern to select specific files in the package_path directory (default: ".*[.]R$")}
 
-\item{name}{Name of the package (default : "packageR")}
+\item{name}{Name of the package (default: "packageR")}
 
-\item{date}{Creation date of the package or the version (default : Sys.Date())}
+\item{date}{Creation date of the package or version (default: Sys.Date())}
 
-\item{description}{Description of the package (default : "A simple R package that help to create simple R package.")}
+\item{description}{Package description (default: "A simple R package that helps create simple R packages.")}
 
-\item{documentation}{Simple documentation for the README file in order to explain how the package work (default : "Go into a directory where there are some R files and within a R console you can type `?packageR::packing` to see possible arguments and then type `packageR::packing(*arguments*)` to create your R package.")}
+\item{documentation}{Simple README documentation explaining how the package works (default: "Navigate to a directory with R files, open an R console, and run `?packageR::packing` to see available arguments. Then, run `packageR::packing(*arguments*)` to create your R package.")}
 
-\item{author}{Author of the package (default : "Louis Héraut")}
+\item{author}{Package author (default: "Louis Héraut")}
 
-\item{email}{Email of the author (default : "louis.heraut@inrae.fr")}
+\item{email}{Author's email (default: "louis.heraut@inrae.fr")}
 
-\item{imports}{Needed package for the instalation of the package that will be created (default : c("roxygen2", "remotes", "devtools", "stringr"))}
+\item{imports}{Required packages for package installation (default: c("roxygen2", "remotes", "devtools", "stringr"))}
 
-\item{git_install}{General R command to install this packages with a repository on which it will be deposed (default : "remotes::install_github('super-lou/packageR')")}
+\item{git_install}{R command to install packages from a specified repository (default: "remotes::install_github('super-lou/packageR')")}
 
-\item{figure_path}{Path of the figure to use for the README}
+\item{figure_path}{Path to a figure to use in the README}
 
-\item{lifecycle}{Lifecycle of the project (default : "Stable")
-Experimental : The project is in the very early stages of development. The codebase will be changing frequently.
-    Maturing : The codebase is being roughed out, but finer details are likely to change.
-      Stable : The project is in a reliable state and major changes are unlikely to happen.
-     Dormant : The project is currently not under active development, but there are plans to redevelop.
-     Retired : The project is no longer being used and/or supported.}
+\item{lifecycle}{Project lifecycle status (default: "Stable")
 
-\item{add_file}{Which files generaly used in a package will be add to this package (default : c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))}
+Lifecycle statuses:
+- Experimental: The project is in its early stages of development, and the codebase may change frequently.
+- Maturing: The codebase is being refined, but finer details are likely to change.
+- Stable: The project is in a reliable state, and major changes are unlikely to occur.
+- Dormant: The project is not currently under active development, but there are plans for future redevelopment.
+- Retired: The project is no longer in use and/or supported.}
+
+\item{add_file}{List of additional files commonly included in packages (default: c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))}
 }
 \value{
-A new directory in the working directory that is a formated usable package based on the input files that were given
+A new directory in the working directory formatted as a usable R package, based on the provided input files.
 
 ...
 
 ...
 }
 \description{
-Creates a R package with a selection of R files that contain functions
+This function creates an R package from a selection of R files containing functions.
 
 ...
 
