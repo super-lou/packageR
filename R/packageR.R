@@ -130,7 +130,7 @@ packing = function (package_path=".",
             print(id_doc)
             print(Lines[id_doc])
             
-            if (id_function != 1) {
+            if (id_function != 1 & nchar(Lines[id_doc]) != 0) {
                 while (!grepl("[[:graph:]]", Lines[id_doc])){
                     id_doc = id_doc - 1
                 }
