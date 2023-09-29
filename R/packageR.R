@@ -85,6 +85,8 @@ packing = function (package_path=".",
         stop (paste0(name, " directory already exists, choose an other name for the package"))
     }
 
+    date = as.Date(date)
+
     if (is.null(figure_path)) {
         figures = c("https://github.com/super-lou/packageR/raw/main/AE/AE_hex_%2066c1bf.png",
                     "https://github.com/super-lou/packageR/raw/main/AE/AE_hex_000000.png",
