@@ -45,11 +45,11 @@ packing(
 \item{figure_path}{Path of the figure to use for the README}
 
 \item{lifecycle}{Lifecycle of the project (default : "Stable")
-Experimental -> The project is in the very early stages of development. The codebase will be changing frequently.
-    Maturing -> The codebase is being roughed out, but finer details are likely to change.
-      Stable -> The project is in a reliable state and major changes are unlikely to happen.
-     Dormant -> The project is currently not under active development, but there are plans to redevelop.
-     Retired -> The project is no longer being used and/or supported.}
+Experimental : The project is in the very early stages of development. The codebase will be changing frequently.
+    Maturing : The codebase is being roughed out, but finer details are likely to change.
+      Stable : The project is in a reliable state and major changes are unlikely to happen.
+     Dormant : The project is currently not under active development, but there are plans to redevelop.
+     Retired : The project is no longer being used and/or supported.}
 
 \item{add_file}{Which files generaly used in a package will be add to this package (default : c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))}
 }

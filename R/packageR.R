@@ -37,11 +37,11 @@
 #' @param git_install General R command to install this packages with a repository on which it will be deposed (default : "remotes::install_github('super-lou/packageR')")
 #' @param figure_path Path of the figure to use for the README
 #' @param lifecycle Lifecycle of the project (default : "Stable")
-#' Experimental -> The project is in the very early stages of development. The codebase will be changing frequently.
-#'     Maturing -> The codebase is being roughed out, but finer details are likely to change.
-#'       Stable -> The project is in a reliable state and major changes are unlikely to happen.
-#'      Dormant -> The project is currently not under active development, but there are plans to redevelop.
-#'      Retired -> The project is no longer being used and/or supported.
+#' Experimental : The project is in the very early stages of development. The codebase will be changing frequently.
+#'     Maturing : The codebase is being roughed out, but finer details are likely to change.
+#'       Stable : The project is in a reliable state and major changes are unlikely to happen.
+#'      Dormant : The project is currently not under active development, but there are plans to redevelop.
+#'      Retired : The project is no longer being used and/or supported.
 #' @param add_file Which files generaly used in a package will be add to this package (default : c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))
 #' @return A new directory in the working directory that is a formated usable package based on the input files that were given
 #' @examples
