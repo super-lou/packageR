@@ -55,7 +55,7 @@
 #'                   documentation="Beware the [*Jabberwock*](https://en.wikipedia.org/wiki/Jabberwocky), my son! The jaws that bite, the claws that catch!</br> Beware the *Jubjub bird*, and shun The frumious *Bandersnatch*!</br> He took his **vorpal sword** in hand:</br></br> - Long time the manxome foe he sought </br> - So rested he by the Tumtum tree, And stood awhile in thought.</br></br> And as in uffish thought he stood `?CheshiRCat::smile`",
 #'                   author="Alice",
 #'                   email="alice@wonderland.uk",
-#'                   imports=c("rabbit", "caterpillar"),
+#'                   imports=c("remotes", "stringr"),
 #'                   git_install="remotes::install_github('alice_adventures/CheshiRCat')",
 #'                   figure_path=NULL,
 #'                   lifecycle="Dormant",
