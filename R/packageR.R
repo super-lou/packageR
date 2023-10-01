@@ -76,11 +76,13 @@ packing = function (package_path=".",
                     lifecycle="Stable",
                     add_file=c("CODE_OF_CONDUCT.md", "DESCRIPTION",
                                "LICENSE", "Makefile", "README.md")) {
+
+    package_path_name = file.path(package_path, name)
     
-    if (!(dir.exists(name))) {
-        dir.create(name)
+    if (!(dir.exists(package_path_name))) {
+        dir.create(package_path_name)
     } else {
-        stop (paste0(name, " directory already exists, choose an other name for the package"))
+        stop (paste0(package_path_name, " directory already exists, choose an other name for the package or delete the existing directory"))
     }
 
     date = as.Date(date)
@@ -102,7 +104,7 @@ packing = function (package_path=".",
 
     isCovenant = "CODE_OF_CONDUCT.md" %in% add_file
 
-    Rpath = file.path(package_path, name, "R")
+    Rpath = file.path(package_path_name, "R")
     dir.create(Rpath)
     Rfiles = list.files(path=package_path,
                         pattern=Rfile_pattern, recursive=TRUE,
@@ -269,7 +271,7 @@ packing = function (package_path=".",
 
 
     for (file in add_file) {
-        file_path = file.path(package_path, name, file)
+        file_path = file.path(package_path_name, file)
         file.create(file_path)
 
         if (file == "DESCRIPTION") {
@@ -291,13 +293,13 @@ packing = function (package_path=".",
               file_path, append=TRUE)
     }
     
-    devtools::document(file.path(package_path, name))
-    download.file(figure_path, file.path(package_path, name, basename(figure_path)))
+    devtools::document(package_path_name)
+    download.file(figure_path, file.path(package_path_name, basename(figure_path)))
 
-    Lines = readLines(file.path(package_path, name, "NAMESPACE"))
+    Lines = readLines(file.path(package_path_name, "NAMESPACE"))
     Lines = Lines[!grepl("export[(].*[)].*[)]", Lines)]
     Lines = paste0(Lines, collapse="\n")   
-    cat(Lines, file=file.path(package_path, name, "NAMESPACE"))
+    cat(Lines, file=file.path(package_path_name, "NAMESPACE"))
 }
 
 

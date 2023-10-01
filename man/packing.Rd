@@ -67,7 +67,7 @@ This function creates an R package from a selection of R files containing functi
 packageR::packing()
 
 # for your personal package
-packageR::packing(package_path="alice/",
+packageR::packing(package_path="alice",
                   Rfile_pattern=".*[.]R$",
                   name="CheshiRCat",
                   date="1865-11-01",
