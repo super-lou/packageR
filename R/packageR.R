@@ -107,8 +107,11 @@ packing = function (package_path=".",
     Rpath = file.path(package_path_name, "R")
     dir.create(Rpath)
     Rfiles = list.files(path=package_path,
-                        pattern=Rfile_pattern, recursive=TRUE,
+                        pattern=Rfile_pattern,
+                        recursive=TRUE,
                         full.names=TRUE)
+
+    print(Rfiles)
 
     for (file in Rfiles) {
 
