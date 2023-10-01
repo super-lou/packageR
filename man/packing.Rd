@@ -67,7 +67,7 @@ This function creates an R package from a selection of R files containing functi
 packageR::packing()
 
 # for your personal package
-packageR::packing(package_path="/home/alice/CheshiRCat/",
+packageR::packing(package_path="alice/CheshiRCat/",
                   Rfile_pattern=".*[.]R$",
                   name="CheshiRCat",
                   date="1865-11-01",
@@ -75,7 +75,7 @@ packageR::packing(package_path="/home/alice/CheshiRCat/",
                   documentation="Beware the [*Jabberwock*](https://en.wikipedia.org/wiki/Jabberwocky), my son! The jaws that bite, the claws that catch!</br> Beware the *Jubjub bird*, and shun The frumious *Bandersnatch*!</br> He took his **vorpal sword** in hand:</br></br> - Long time the manxome foe he sought </br> - So rested he by the Tumtum tree, And stood awhile in thought.</br></br> And as in uffish thought he stood `?CheshiRCat::smile`",
                   author="Alice",
                   email="alice@wonderland.uk",
-                  imports=c("remotes", "stringr"),
+                  imports=c("forcats", "pillar"),
                   git_install="remotes::install_github('alice_adventures/CheshiRCat')",
                   figure_path=NULL,
                   lifecycle="Dormant",
