@@ -116,6 +116,8 @@ packing = function (package_path=".",
     for (file in Rfiles) {
 
         Lines = readLines(file)
+
+        print(Lines)
         
         Id_function =
             which(
@@ -127,6 +129,9 @@ packing = function (package_path=".",
         for (i in 1:length(Id_function)) {
             id_function = Id_function[i]
             id_doc = id_function - 1
+
+            print(id_function)
+            print(Lines[id_doc])
 
             if (id_function != 1 & nchar(Lines[id_doc]) != 0) {
                 while (!grepl("[[:graph:]]", Lines[id_doc])){
