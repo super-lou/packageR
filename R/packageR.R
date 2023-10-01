@@ -111,14 +111,9 @@ packing = function (package_path=".",
                         recursive=TRUE,
                         full.names=TRUE)
 
-    print(Rfiles)
-
     for (file in Rfiles) {
-
         Lines = readLines(file)
 
-        print(Lines)
-        
         Id_function =
             which(
                 sapply(Lines, grepl,
@@ -130,10 +125,8 @@ packing = function (package_path=".",
             id_function = Id_function[i]
             id_doc = id_function - 1
 
-            print(id_function)
-            print(Lines[id_doc])
-
-            if (id_function != 1 & nchar(Lines[id_doc]) != 0) {
+            # if (id_function != 1 & nchar(Lines[id_doc]) != 0) {
+            if (id_function != 1) {
                 while (!grepl("[[:graph:]]", Lines[id_doc])){
                     id_doc = id_doc - 1
                 }
