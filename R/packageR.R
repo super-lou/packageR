@@ -59,7 +59,7 @@
 #'                   git_install="remotes::install_github('alice_adventures/CheshiRCat')",
 #'                   figure_path=NULL,
 #'                   lifecycle="Dormant",
-#'                   add_file=c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))
+#'                   add_file=c("CODE_OF_CONDUCT.md", "LICENSE", "Makefile", "README.md"))
 #' @export
 #' @md
 packing = function (package_path=".",
@@ -74,8 +74,8 @@ packing = function (package_path=".",
                     git_install="remotes::install_github('super-lou/packageR')",
                     figure_path=NULL,
                     lifecycle="Stable",
-                    add_file=c("CODE_OF_CONDUCT.md", "DESCRIPTION",
-                               "LICENSE", "Makefile", "README.md")) {
+                    add_file=c("CODE_OF_CONDUCT.md", "LICENSE",
+                               "Makefile", "README.md")) {
 
     package_path_name = file.path(package_path, name)
     
@@ -277,6 +277,7 @@ packing = function (package_path=".",
         cat(Lines, file=file.path(Rpath, basename(file)))
     }
 
+    add_file = c("DESCRIPTION", add_file)
 
     for (file in add_file) {
         file_path = file.path(package_path_name, file)

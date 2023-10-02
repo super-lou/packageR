@@ -18,7 +18,7 @@ packing(
   git_install = "remotes::install_github('super-lou/packageR')",
   figure_path = NULL,
   lifecycle = "Stable",
-  add_file = c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md")
+  add_file = c("CODE_OF_CONDUCT.md", "LICENSE", "Makefile", "README.md")
 )
 }
 \arguments{
@@ -54,7 +54,7 @@ Lifecycle statuses:
 \item Retired: The project is no longer in use and/or supported.
 }}
 
-\item{add_file}{List of additional files commonly included in packages (default: c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))}
+\item{add_file}{List of additional files commonly included in packages (default: c("CODE_OF_CONDUCT.md", "LICENSE", "Makefile", "README.md"))}
 }
 \value{
 A new directory in the working directory formatted as a usable R package, based on the provided input files.
@@ -79,5 +79,5 @@ packageR::packing(package_path="alice",
                   git_install="remotes::install_github('alice_adventures/CheshiRCat')",
                   figure_path=NULL,
                   lifecycle="Dormant",
-                  add_file=c("CODE_OF_CONDUCT.md", "DESCRIPTION", "LICENSE", "Makefile", "README.md"))
+                  add_file=c("CODE_OF_CONDUCT.md", "LICENSE", "Makefile", "README.md"))
 }
