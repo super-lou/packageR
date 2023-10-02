@@ -125,9 +125,6 @@ packing = function (package_path=".",
             id_function = Id_function[i]
             id_doc = id_function - 1
 
-            print()
-            print(Lines[id_doc]))
-            
             if (id_function != 1) {
                 if (is.character(Lines[id_doc])) {
                     while (!grepl("[[:graph:]]", Lines[id_doc])) {
