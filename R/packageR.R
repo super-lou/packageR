@@ -125,10 +125,13 @@ packing = function (package_path=".",
             id_function = Id_function[i]
             id_doc = id_function - 1
 
-            # if (id_function != 1 & nchar(Lines[id_doc]) != 0) {
             if (id_function != 1) {
-                while (!grepl("[[:graph:]]", Lines[id_doc])){
-                    id_doc = id_doc - 1
+                if (nchar(Lines[id_doc]) != 0) {
+                    while (!grepl("[[:graph:]]", Lines[id_doc])) {
+                        id_doc = id_doc - 1
+                    }
+                } else {
+                    id_doc = 1
                 }
             } else {
                 id_doc = 1
