@@ -293,7 +293,7 @@ packing = function (package_path=".",
             args = "git_install"
 
         } else if (file == "README.md") {
-            args = "name, figure_path, lifecycle, git_install, isCovenant, description, documentation"
+            args = "name, basename(figure_path), lifecycle, git_install, isCovenant, description, documentation"
         } else {
             args = ""
         }
