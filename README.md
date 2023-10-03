@@ -21,6 +21,7 @@ remotes::install_github('super-lou/packageR')
 ## Documentation
 Navigate to a directory with R files, open an R console, and run `?packageR::packing` to see available arguments. Then, run `packageR::packing(*arguments*)` to create your R package.
 
+Detailed documentation is also present in those [slides](https://github.com/super-lou/packageR/blob/main/packageR_slides.pdf) (in french).
 
 
 ## FAQ
