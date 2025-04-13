@@ -146,6 +146,9 @@ packing = function (package_path=".",
                 id_end_function = id_function
                 while (!grepl("[)][[:space:]]*[{]",
                               Lines[id_end_function])) {
+                                  if (is.na(Lines[id_end_function])) { #if we are at the end of the file
+                                      stop(paste('Impossible to find ") {" at the end of the function line', as.numeric(id_function), 'in file', file))
+                                  }
                                   id_end_function = id_end_function + 1
                               }
                 
